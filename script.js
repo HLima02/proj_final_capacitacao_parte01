@@ -21,24 +21,38 @@ let Cart = function(produto){
 	this.itens = []
 	this.addItem = function(produto){
 		this.itens.push(produto)
-		console.log(this.itens)
 		console.log('Item adicionado')
+		console.log(this.itens)
+		
 	}
 
 	this.removeItem = function(produto){
-		this.itens.pop()
-		console.log(this.itens)
-		console.log('Item removido')
+		this.produto = produto
+		for(let i = 0; i < this.itens.length; i++){
+			if(this.produto == i){
+				this.itens.splice(i, 1)
+				console.log('Item removido')
+				console.log(this.itens)
+				
+			}
+			
+		}
 	}
 }
 
 
 
 let produto1 = new Produto(101, 'Maçã', 2.00)
+let produto2 = new Produto(102, 'Melão', 4.00)
+let produto3 = new Produto(103, 'Abaxi', 5.00)
+
 let cart = new Cart()
 
+cart.addItem(produto1)
+cart.addItem(produto2)
+cart.addItem(produto3)
 
-
+console.log(cart.itens)
 
 
 
